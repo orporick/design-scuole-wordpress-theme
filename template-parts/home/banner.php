@@ -9,7 +9,6 @@ if($visualizza_banner == "si") {
         <div class="container py-2">
             <div class="row variable-gutters">
                 <div class="col">
-                    <p class="text-center"><?php _e("Pubblicità e Informazione", "design_scuole_italia"); ?></p>
                     <div class="it-carousel-wrapper carousel-notice it-carousel-landscape-abstract-three-cols splide">
                         <div class="splide__track ps-lg-3 pe-lg-3">
                             <ul class="splide__list it-carousel-all">
@@ -22,9 +21,9 @@ if($visualizza_banner == "si") {
                                         <div class="banner">
                                             <?php if($banner["url"] != "") echo '<a href="'.$banner["url"].'">'; ?>
                                                 <figure class="text-center px-2">
-                                                    <img 
-                                                    src="<?php echo $image_url; ?>" 
-                                                    style="max-width: 100%;" 
+                                                    <img
+                                                    src="<?php echo $image_url; ?>"
+                                                    style="max-width: 100%;"
                                                     alt="<?php echo $image_alt; ?>" />
                                                 </figure>
                                             <?php if($banner["url"] != "") echo '</a>'; ?>
