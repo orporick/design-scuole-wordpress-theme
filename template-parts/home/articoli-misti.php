@@ -30,8 +30,13 @@ if ($home_show_events == "true_event") {
 			);
 			// Creo un unico array, potenzialmente di 6 oggetti.
 			$posts2 = get_posts($args);
+            //Ordino per data del post
 			$posts = array_merge($posts, $posts2);
+			usort($posts, function($post_a, $post_b) {
+				return $post_b->post_date <=> $post_a->post_date;
+			});
 }
+
 
 ?>
 
