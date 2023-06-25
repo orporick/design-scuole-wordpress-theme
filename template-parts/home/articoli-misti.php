@@ -3,11 +3,6 @@
 
 $home_show_events = dsi_get_option("home_show_events", "homepage");
 
-// Raccolgo gli ultimi 3 post, indipendentemente dal tipo
-$args = array('post_type' => 'post',
-                    'posts_per_page' => 3,
-                );
-$posts = get_posts($args);
 
 // Se nelle impostazioni ho selezionato anche gli eventi, raccolgo gli ultimi 3
 if ($home_show_events == "true_event") {
@@ -30,13 +25,19 @@ if ($home_show_events == "true_event") {
 			);
 			// Creo un unico array, potenzialmente di 6 oggetti.
 			$posts2 = get_posts($args);
-            //Ordino per data del post
-			$posts = array_merge($posts, $posts2);
-			usort($posts, function($post_a, $post_b) {
-				return $post_b->post_date <=> $post_a->post_date;
-			});
 }
 
+// Raccolgo gli ultimi 3 post, indipendentemente dal tipo
+$numpost = sizeof($posts2);
+$args = array('post_type' => 'post',
+                    'posts_per_page' => 6-$numpost,
+                );
+$posts = get_posts($args);
+//Ordino per data del post
+$posts = array_merge($posts, $posts2);
+usort($posts, function($post_a, $post_b) {
+	return $post_b->post_date <=> $post_a->post_date;
+});
 
 ?>
 
