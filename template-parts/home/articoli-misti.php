@@ -55,7 +55,7 @@ usort($posts, function($post_a, $post_b) {
                             if ($post->post_type == "evento")
                                 get_template_part("template-parts/evento/card");
                             else
-                                get_template_part("template-parts/list/article", $post->post_type);
+                                get_template_part("template-parts/single/card-verical-thumb-page", $post->post_type);
                             ?>
                         </div><!-- /col-lg-4 -->
                         <?php
