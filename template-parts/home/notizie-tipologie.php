@@ -4,7 +4,8 @@ global $post, $tipologia_notizia, $ct, $servizio;
 $container_class = "bg-white";
 if($ct%2)
 	$container_class = "bg-gray-light";
-
+if ($tipologia_notizia->name == "Avvisi")
+	$avviso="avviso"
 ?>
 
 <section class="section <?php echo $container_class; ?> py-5">
@@ -30,7 +31,7 @@ if($ct%2)
 					foreach ($posts as $post){ ?>
 					<li class="splide__slide">
 								<div class="it-single-slide-wrapper h-100">
-								<?php get_template_part("template-parts/single/card", "marinelli"); ?>
+								<?php get_template_part("template-parts/single/card-marinelli", $avviso); ?>
 								</div>
 							</li>
 					<?php } ?>
