@@ -28,7 +28,8 @@ if(!$excerpt)
 		</div><!-- /card-event-dates-icon -->
 		<div class="card-event-dates-content">
 			<p class="font-weight-normal"><?php
-              echo date_i18n('d F Y', $post->post_date);?></p>
+			$date_publish = new DateTime($post->post_date);
+			echo $date_publish->format('d F Y');?></p>
 		</div><!-- /card-event-dates-content -->
 	</div><!-- /card-event-dates -->
 
