@@ -52,10 +52,10 @@ foreach ( $tipologie_notizie as $id_tipologia_notizia ) {
 					),
 				),
 			);
-		$avvisi = get_posts($args);
+			$avvisi = get_posts($args);
 		} else {
 			$args = array('post_type' => 'post',
-                    'posts_per_page' => 6-$numpost,
+                    'posts_per_page' => 6,
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'tipologia-articolo',
@@ -69,6 +69,10 @@ foreach ( $tipologie_notizie as $id_tipologia_notizia ) {
 		}
 }
 
+// Sommo il numero di eventi e di avvisi per decidere
+// quante notizie tenere
+$numnonpost = sizeof($posts2)+sizeof($avvisi);
+$articoli = array_slice($articoli,0,6-$numnonpost);
 
 //Ordino per data del post
 $articoli = array_merge($articoli, $posts2);
