@@ -29,8 +29,9 @@ get_header();
 
 			}
 
-            get_template_part("template-parts/home/notizie", "circolari");
-            $ct++;
+			// Nascondo le circolari perche' gestite fuori dal sito
+            //get_template_part("template-parts/home/notizie", "circolari");
+            //$ct++;
             get_template_part("template-parts/home/eventi");
 
 

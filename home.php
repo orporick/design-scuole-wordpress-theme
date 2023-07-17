@@ -40,15 +40,15 @@ get_header();
             else if($visualizzazione_didattica == "indirizzi")
                 get_template_part("template-parts/home/didattica", "cicli-indirizzi");
 
-              get_template_part("template-parts/home/didattica", "risorse");
+              get_template_part("template-parts/home/didattica", "progetti");
 
 //            get_template_part("template-parts/luogo/map");
 
         endif; // End of the loop.
-		
-		
+
+
 		$home_argomenti = dsi_get_option("home_argomenti", "homepage");
-		
+
 		if (is_array($home_argomenti) && count($home_argomenti)) {
 			?>
 				<section class="section bg-white">

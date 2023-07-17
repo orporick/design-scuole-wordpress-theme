@@ -229,7 +229,7 @@ get_header();
                                             <?php echo wpautop($canale_digitale); ?>
                                             <?php if(trim($canale_digitale_link) != ""){  ?>
                                                 <div class="btn-wrapper mb-5">
-                                                    <a class="btn btn-purplelight" href="<?php echo $canale_digitale_link; ?>"><?php echo $canale_digitale_label; ?></a>
+                                                    <a class="btn btn-purplelight" href="<?php echo $canale_digitale_link; ?>" target="_blank" ><?php echo $canale_digitale_label; ?></a>
                                                 </div>
                                             <?php } ?>
                                         </div><!-- /col-lg-9 -->
@@ -244,7 +244,7 @@ get_header();
                                             <?php echo apply_filters("the_content", $autenticazione); ?>
                                         </div><!-- /col-lg-9 -->
 									</div><!-- /row -->
-									
+
 									<div class="row variable-gutters mb-4">
 										<?php if($provider_autenticazione && is_array($provider_autenticazione)){
 										if(in_array("SPID", $provider_autenticazione)) {
@@ -273,7 +273,7 @@ get_header();
 													<p><?php _e("Non hai CNS?", "design_scuole_italia"); ?><br/><a href="https://sistemats1.sanita.finanze.it/portale/modalita-di-accesso-con-ts_cns" aria-label="scopri di più su CNS - link esterno - (apre pagina su nuova scheda)" data-focus-mouse="false">Scopri di più</a>.</p>
 												</div>
 											</div>
-										<?php }									
+										<?php }
 									}?>
                                     </div><!-- /row -->
 								<?php
@@ -425,7 +425,7 @@ get_header();
                                     </div><!-- /row -->
                                     <?php
                                 }
-                                
+
                                 if($telefono || $mail || (is_array($struttura_responsabile) && count($struttura_responsabile) > 0)){
                                     ?>
                                     <div class="row variable-gutters mb-4" >
@@ -462,7 +462,7 @@ get_header();
                                     <?php } ?>
                                 <?php } ?>
 
-                                <?php                                
+                                <?php
 
                                 if(isset($arrstrutture) && is_array($arrstrutture) && count($arrstrutture) > 0){
                                     ?>
@@ -502,7 +502,7 @@ get_header();
                                         }
                                         ?>
                                     </div><!-- /card-deck card-deck-spaced -->
-                                <?php } 
+                                <?php }
 
                                 ?>
                                 <div class="row variable-gutters">
