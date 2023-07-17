@@ -33,14 +33,16 @@ get_header();
         <?php get_template_part("template-parts/hero/servizi"); ?>
         <?php get_template_part("template-parts/home/list", "servizi"); ?>
         </section>
-            <?php
+
+
+          <?php
             $visualizzazione_didattica = dsi_get_option("visualizzazione_didattica", "didattica");
             if($visualizzazione_didattica == "scuole")
                 get_template_part("template-parts/home/didattica", "cicli");
             else if($visualizzazione_didattica == "indirizzi")
                 get_template_part("template-parts/home/didattica", "cicli-indirizzi");
 
-              get_template_part("template-parts/home/didattica", "progetti");
+              get_template_part("template-parts/home/didattica", "risorse");
 
 //            get_template_part("template-parts/luogo/map");
 
