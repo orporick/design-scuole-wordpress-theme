@@ -348,6 +348,8 @@ class Breadcrumb_Trail {
 					case 'struttura':
 						$this->items[] =  "<a href='".home_url("la-scuola")."'>".__("Scuola", "design_scuole_italia")."</a>";
 						break;
+					case 'indirizzo':
+						$this->items[] =  "<a href='".home_url("servizi")."'>".__("Servizi", "design_scuole_italia")."</a>";
 				}
 				$this->add_singular_items();
 			} else if ( is_archive() ) { // If viewing an archive page.
@@ -373,6 +375,18 @@ class Breadcrumb_Trail {
                 } else if ( is_category() || is_tag() || is_tax() ) {
                     if( is_tax( array("tipologia-articolo") ) ) {
                         $this->items[] =  "<a href='".home_url("novita")."'>".__("Novità", "design_scuole_italia")."</a>";
+					}
+					else if (is_tax(array("tipologia-struttura"))){
+						$this->items[] = "<a href='".home_url("la-scuola")."'>".__("Scuola", "design_scuole_italia")."</a>";
+					}
+					else if (is_tax(array("tipologia-documento"))){
+						$this->items[] = "<a href='".home_url("la-scuola")."'>".__("Scuola", "design_scuole_italia")."</a>";
+					}
+					else if (is_tax(array("tipologia-luogo"))){
+						$this->items[] = "<a href='".home_url("la-scuola")."'>".__("Scuola", "design_scuole_italia")."</a>";
+					}
+					else if (is_tax(array("percorsi-di-studio"))){
+						$this->items[] = "<a href='".home_url("servizi")."'>".__("Servizi", "design_scuole_italia")."</a>";
 					}
                     $this->add_term_archive_items();
                 } else if ( is_author() ) {
@@ -585,6 +599,7 @@ class Breadcrumb_Trail {
 		    return;
 		$taxonomy       = get_taxonomy( $term->taxonomy );
 		$done_post_type = false;
+
 
 		// If there are rewrite rules for the taxonomy.
 		if ( false !== $taxonomy->rewrite ) {
@@ -1099,12 +1114,12 @@ class Breadcrumb_Trail {
 			// If the category has a parent, add the hierarchy to the trail.
 			if ( 0 < $term->parent )
 				$this->add_term_parents( $term->parent, $taxonomy );
-			
+
 			$post_type_filter = '';
 			if ( $taxonomy && get_taxonomy( $taxonomy ) && get_taxonomy( $taxonomy )->object_type && count( get_taxonomy( $taxonomy )->object_type ) > 1 ) {
 				$post_type_filter = '?post_type='.$post_type;
 			}
-			
+
 			// Add the category archive link to the trail.
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ).$post_type_filter, $term->name );
 		}

@@ -7,7 +7,7 @@ function dsi_register_documento_post_type() {
 
     /** documenti **/
     $labels = array(
-        'name'          => _x( 'Documenti', 'Post Type General Name', 'design_scuole_italia' ),
+        'name'          => _x( 'Le carte della scuola', 'Post Type General Name', 'design_scuole_italia' ),
         'singular_name' => _x( 'Documento', 'Post Type Singular Name', 'design_scuole_italia' ),
         'add_new'       => _x( 'Aggiungi un Documento', 'Post Type Singular Name', 'design_scuole_italia' ),
         'add_new_item'  => _x( 'Aggiungi un Documento', 'Post Type Singular Name', 'design_scuole_italia' ),
@@ -363,7 +363,7 @@ function dsi_add_documento_metaboxes() {
         'type'    => 'pw_multiselect',
         'options' =>  dsi_get_servizi_options(),
     ) );
-	
+
     $cmb_aftercontent->add_field( array(
         'id' => $prefix . 'link_servizi_didattici',
         'name'        => __( 'Indirizzi di studio collegati', 'design_scuole_italia' ),
@@ -371,7 +371,7 @@ function dsi_add_documento_metaboxes() {
         'type'    => 'pw_multiselect',
         'options' =>  dsi_get_servizi_didattici_options(),
     ) );
-	
+
 /*
     $cmb_aftercontent->add_field( array(
         'id' => $prefix . 'link_servizi_collegati',
@@ -546,7 +546,7 @@ function dsi_display_custom_post_status_option(){
         jQuery(document).ready(function(){
         jQuery("select#post_status").append("<option value=\"scaduto\" ' . $selected_scaduto . '>Scaduto</option>");
         //jQuery(".misc-pub-section label").append("<span id=\"post-status-display\"> Scaduto</span>");
-        
+
         jQuery("select#post_status").append("<option value=\"annullato\" ' . $selected_annullato . '>Annullato</option>");
         //jQuery(".misc-pub-section label").append("<span id=\"post-status-display\"> Annullato</span>");
 });
@@ -580,7 +580,7 @@ function dsi_append_documenti_post_status_list(){
       jQuery(document).ready(function($){
            $("select#post_status").append("<option value=\"scaduto\" '.$complete_s.'>Scaduto</option>");
            $(".misc-pub-section label").append("'.$label_s.'");
-           
+
            $("select#post_status").append("<option value=\"annullato\" '.$complete_a.'>Annullato</option>");
            $(".misc-pub-section label").append("'.$label_a.'");
            ';
@@ -598,11 +598,11 @@ function dsi_append_documenti_post_status_list(){
             echo '
                  $("span#post-status-display").html("Annullato");
                 $("input#save-post").val("Aggiorna");
-                
+
             ';
         }
 
-        echo '       
+        echo '
         var jSelect = $("select#post_status");
            $("a.save-post-status").on("click", function(){
                 if( jSelect.val() == "scaduto" ){
