@@ -385,6 +385,9 @@ class Breadcrumb_Trail {
 					else if (is_tax(array("tipologia-luogo"))){
 						$this->items[] = "<a href='".home_url("la-scuola")."'>".__("Scuola", "design_scuole_italia")."</a>";
 					}
+					else if (is_tax(array("tipologia-progetto"))){
+						$this->items[] = "<a href='".home_url("didattica")."'>".__("Didattica", "design_scuole_italia")."</a>";
+					}
 					else if (is_tax(array("percorsi-di-studio"))){
 						$this->items[] = "<a href='".home_url("servizi")."'>".__("Servizi", "design_scuole_italia")."</a>";
 					}
