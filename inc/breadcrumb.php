@@ -243,6 +243,10 @@ class Breadcrumb_Trail {
 		// Allow developers to filter the breadcrumb trail HTML.
 		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
 
+		$breadcrumb = str_replace("La Scuola", "Scuola",$breadcrumb);
+
+		$breadcrumb = str_replace("?post_type=indirizzo","",$breadcrumb);
+
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
 
@@ -390,6 +394,7 @@ class Breadcrumb_Trail {
 					}
 					else if (is_tax(array("percorsi-di-studio"))){
 						$this->items[] = "<a href='".home_url("servizi")."'>".__("Servizi", "design_scuole_italia")."</a>";
+						$this->items[] = "<a href='".home_url("indirizzo-di-studio")."'>".__("Indirizzo di studio", "design_scuole_italia")."</a>";
 					}
                     $this->add_term_archive_items();
                 } else if ( is_author() ) {
