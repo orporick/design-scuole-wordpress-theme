@@ -48,8 +48,11 @@ get_header();
 
         endif; // End of the loop.
 
+//        get_template_part("template-parts/hero/didattica");
+//        get_template_part("template-parts/home/list-indirizzi");
+//        get_template_part("template-parts/home/didattica", "risorse");
 
-		$home_argomenti = dsi_get_option("home_argomenti", "homepage");
+        $home_argomenti = dsi_get_option("home_argomenti", "homepage");
 
 		if (is_array($home_argomenti) && count($home_argomenti)) {
 			?>
