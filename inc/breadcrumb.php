@@ -243,9 +243,6 @@ class Breadcrumb_Trail {
 		// Allow developers to filter the breadcrumb trail HTML.
 		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
 
-		$breadcrumb = str_replace("La Scuola", "Scuola",$breadcrumb);
-
-		$breadcrumb = str_replace("?post_type=indirizzo","",$breadcrumb);
 
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
